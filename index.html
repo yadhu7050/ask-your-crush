@@ -4,32 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ask Out Your Crush</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-    <style>
-        /* Inline styling for background image, processed by Flask */
-        body {
-            background-image: url("{{ url_for('static', filename='smile.jpg') }}");
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            height: 100vh; /* Full viewport height */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0;
-            flex-direction: column;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1 class="heading">Ask Out Your Crush!</h1>
+        <!-- GIF Display -->
+        <div class="gif-container">
+            <img src="static/home.gif" alt="Cute GIF" class="cute-gif">
+        </div>
+        
+        <!-- Heading and Text -->
+        <h1 class="heading">A Question Just For You... Say Yes or No!</h1>
+        <p class="message">No more beating around the bush... Will you go out with me? Please say yes!!</p>
+        
+        <!-- Buttons -->
         <div class="buttons">
-            <button id="yesButton" class="button" onclick="window.location.href='/yes'">Yes</button>
-            <button id="noButton" class="button" onclick="window.location.href='/no'">No</button>
+            <button id="yesButton" class="button" onclick="window.location.href='yes.html'">Yes</button>
+            <button id="noButton" class="button" onclick="window.location.href='no.html'">No</button>
         </div>
     </div>
 
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="script.js"></script>
 </body>
 </html>

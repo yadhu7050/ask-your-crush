@@ -1,0 +1,109 @@
+/* Reset margin and padding for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding and border are included in element size */
+}
+
+/* Apply background image */
+html, body {
+    height: 100%; /* Ensure both html and body take full height */
+}
+
+body {
+    background-image: url('static/smile.jpg');
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    overflow: auto; /* Allow scrolling if content exceeds viewport */
+    min-height: 100vh; /* Ensure the page always takes at least the full height */
+}
+
+/* Container for the whole content */
+.container {
+    text-align: center;
+    color: white;
+    position: relative;
+    z-index: 1;
+    padding-bottom: 100px; /* Add extra padding at the bottom for scrolling */
+}
+
+/* Heading styling */
+h1 {
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    z-index: 2;
+}
+
+/* Text styling */
+p {
+    font-size: 20px;
+    margin-bottom: 20px;
+    z-index: 2;
+}
+
+/* Styling for the GIF container */
+.gif-container {
+    margin-bottom: 40px;
+    z-index: 1;
+}
+
+/* GIF image styling */
+.cute-gif {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Button container (to stack the buttons below the text) */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Keeps buttons within container */
+    z-index: 2;
+    margin-top: 20px; /* Add spacing between buttons and text */
+}
+
+/* Button styling */
+button {
+    padding: 20px 40px;
+    font-size: 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative; /* Relative position for normal flow */
+    z-index: 2;
+}
+
+/* Yes button */
+#yesButton {
+    background-color: #FF69B4; /* Pink */
+}
+
+/* No button */
+#noButton {
+    background-color: #FF6347; /* Red */
+}
+
+/* Hover effect for buttons */
+button:hover {
+    opacity: 0.8;
+}
+
+/* Add any additional spacing for full-page effect */
+body {
+    min-height: 100vh; /* Ensure body always takes at least full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: auto; /* Allow scrolling */
+}

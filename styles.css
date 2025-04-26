@@ -7,7 +7,9 @@
 
 /* Apply background image */
 html, body {
-    height: 100%; /* Ensure both html and body take full height */
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
 }
 
 body {
@@ -18,10 +20,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     position: relative;
-    overflow: auto; /* Allow scrolling if content exceeds viewport */
-    min-height: 100vh; /* Ensure the page always takes at least the full height */
 }
 
 /* Container for the whole content */
@@ -30,7 +29,16 @@ body {
     color: white;
     position: relative;
     z-index: 1;
-    padding-bottom: 100px; /* Add extra padding at the bottom for scrolling */
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1024px;
+    max-height: 960px;
+    margin: 0 auto;
+    overflow: hidden;
 }
 
 /* Heading styling */
@@ -61,26 +69,32 @@ p {
     border-radius: 10px;
 }
 
-/* Button container (to stack the buttons below the text) */
+/* Button container */
 .buttons {
     display: flex;
     justify-content: center;
     gap: 20px;
-    position: relative; /* Keeps buttons within container */
+    position: relative;
     z-index: 2;
-    margin-top: 20px; /* Add spacing between buttons and text */
+    margin-top: 20px;
+    min-height: 60px; /* Reduced to match button height */
 }
 
 /* Button styling */
 button {
-    padding: 20px 40px;
-    font-size: 24px;
+    padding: 15px 30px;
+    font-size: 20px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    position: relative; /* Relative position for normal flow */
+    position: relative;
     z-index: 2;
+    min-width: 120px; /* Added minimum width for consistency */
+    height: 60px; /* Fixed height for both buttons */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Yes button */
@@ -90,7 +104,27 @@ button {
 
 /* No button */
 #noButton {
-    background-color: #FF6347; /* Red */
+    background-color: #FF6347;
+    box-shadow: 0 4px 12px rgba(255, 99, 71, 0.3);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    will-change: transform, opacity;
+    position: relative;
+    z-index: 10;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    margin-left: 20px; /* Add space between buttons */
+}
+
+/* No button specific hover effect */
+#noButton:hover {
+    box-shadow: 0 8px 16px rgba(255, 99, 71, 0.4);
+    transform: scale(1.05);
+    background-color: #ff4d2e;
+}
+
+/* No button active state */
+#noButton:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 8px rgba(255, 99, 71, 0.2);
 }
 
 /* Hover effect for buttons */
